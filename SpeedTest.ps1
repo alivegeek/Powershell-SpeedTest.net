@@ -6,6 +6,10 @@
 .EXAMPLE
     .\SpeedTestReport.ps1
 #>
+
+
+#Enforce TLS 1.2 for compatibility on server 2016
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Function Send-TeamsMessage {
     param (
         [string]$message,
